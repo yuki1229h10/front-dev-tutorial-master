@@ -1,0 +1,20 @@
+body {
+  /* インライン要素の中央揃え*/
+  text-align: center;
+}
+
+#first {
+  display: inline-block;
+  /* ブロック要素の中央揃え*/
+  width: 100px;
+  height: 400px;
+  background-color: magenta;
+}
+
+.cls {
+  display: inline-block;
+  /* ブロック要素の中央揃え*/
+  width: 100px;
+  height: 400px;
+  background-color: gray;
+}
