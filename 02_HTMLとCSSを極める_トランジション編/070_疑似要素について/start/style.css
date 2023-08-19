@@ -33,6 +33,6 @@
 .btn.slide-bg:hover {
   color: white;
 }
-.btn.slide-bg:hover::before {
+.btn.slide-bg:hover::after {
   transform: none;
 }/*# sourceMappingURL=style.css.map */

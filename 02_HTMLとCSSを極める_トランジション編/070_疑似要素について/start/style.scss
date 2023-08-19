@@ -37,7 +37,7 @@ $cBlack: black;
     &:hover {
       color: $cWhite;
 
-      &::before {
+      &::after {
         transform: none;
       }
     }
