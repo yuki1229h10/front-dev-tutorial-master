@@ -1,5 +1,6 @@
-h1 {
-    background: orange;
-    font-size: 15px;
-}
+@use "child" as child;
 
+h1 {
+    background: child.$cOrange;
+    font-size: calc(30px / 2);
+}
