@@ -49,7 +49,7 @@ img {
 }
 
 .img-zoom {
-  opacity: 0;
+  opacity: 1;
 
   .inview & {
     opacity: 1;
@@ -57,7 +57,7 @@ img {
     @include animation($name: kf-img-show, $duration: 1.6s, $timing-function: ease-in-out, $fill-mode: none);
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.3);
     }
   }
 }
@@ -75,5 +75,23 @@ img {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.hover-darken {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    @include animation($name: kf-img-show, $duration: 1.6s, $timing-function: ease-in-out, $fill-mode: none);
+  }
+  &:hover::before {
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
