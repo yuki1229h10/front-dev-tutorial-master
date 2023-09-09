@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1 id="main-title">JavaScript基礎</h1>
-    <h2 class="sub-title">DOM(Document Object Model)とは？</h2>
-    <ul>
-      <li class="item item-1">HTMLを<strong class="v1">JavaScript</strong>から操作できるようにしたインターフェイス。</li>
-      <li class="item item-2">JavaScriptからは<strong class="v2">DOM APIを通じてHTMLの情報を取得・変更します。</strong></li>
-      <li class="item item-3"><strong class="v3">情報の取得・変更・イベントの登録</strong>などができます。</li>
-    </ul>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 id="main-title">JavaScript基礎</h1>
+  <h2 class="sub-title">DOM(Document Object Model)とは？</h2>
+  <ul>
+    <li class="item item-1">HTMLを<strong class="v1">JavaScript</strong>から操作できるようにしたインターフェイス。</li>
+    <li class="item item-2">JavaScriptからは<strong class="v2">DOM APIを通じてHTMLの情報を取得・変更します。</strong></li>
+    <li class="item item-3"><strong class="v3">情報の取得・変更・イベントの登録</strong>などができます。</li>
+  </ul>
+  <style>
+    .underline {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    console.log(document.querySelector('#main-title'));
+    console.log(document.body.children);
+    console.log(document.getElementById('main-title'));
+    console.log(document.querySelector('.sub-title'));
+    console.log(document.querySelector('h1'));
+
+    const h1 = document.querySelector('#main-title');
+    h1.innerHTML = 'ABC';
+    // console.log(h1.textContent);
+    h1.style.color = 'red';
+    h1.style.backgroundColor = 'gray';
+
+    h1.classList.add('underline');
+    h1.classList.remove('underline');
+    h1.classList.toggle('underline');
+
+    const li = document.querySelectorAll('li');
+    li.forEach(node => node.style.color = 'purple');
+  </script>
+</body>
+
 </html>
