@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const btn = document.querySelector('#btn');
-    const ta = new TextAnimation('.tween-animate-title');
+    const ta = new TweenTextAnimation('.tween-animate-title');
     ta.animate();
 });
 
@@ -24,17 +24,21 @@ class TextAnimation {
     }
 }
 
-class TweenTextAnimation2 extends TextAnimation {
+class TweenTextAnimation extends TextAnimation {
     constructor(el) {
         super(el);
-        this.DOM.chars = this.DOM.el.querySelector('.char');
+        this.DOM.chars = this.DOM.el.querySelectorAll('.char');
     }
 
     animate() {
-        this.DOM.chars.array.forEach((c, i) => {
+        this.DOM.el.classList.add('inview');
+        this.DOM.chars.forEach((c, i) => {
             TweenMax.to(c, .6, {
                 ease: Back.easeOut,
-                delay:
+                delay: i * .05,
+                startAt: { y: '-50%', opacity: 0 },
+                y: '0%',
+                opacity: 1
             });
         });
         console.log('be like water');

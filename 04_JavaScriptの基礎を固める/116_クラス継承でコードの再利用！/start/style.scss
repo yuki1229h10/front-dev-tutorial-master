@@ -29,7 +29,12 @@ body {
 
     & .char {
       display: inline-block;
+      opacity: 0;
     }
+  }
+
+  & .char {
+    opacity: 0;
   }
 }
 
