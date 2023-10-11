@@ -17,7 +17,7 @@ class ScrollObserver {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     this.cb(entry.target, true);
-                    if(this.once) {
+                    if (this.once) {
                         observer.unobserve(entry.target);
                     }
                 } else {
@@ -30,7 +30,7 @@ class ScrollObserver {
 
         // @see https://github.com/w3c/IntersectionObserver/tree/master/polyfill
         this.io.POLL_INTERVAL = 100;
-        
+
         this.els.forEach(el => this.io.observe(el));
     }
 
